@@ -10,7 +10,10 @@ const modalities = [
       "A 'Nobre Arte' não é sobre bater, é sobre precisão. Queime até 800 calorias enquanto domina a técnica dos grandes campeões.",
     stat: "800",
     statLabel: "kcal / sessão",
-    schedule: ["08:00", "20:00"],
+    schedule: [
+      { label: "Manhã", time: "08:00" },
+      { label: "Noite", time: "20:00" },
+    ],
   },
   {
     code: "02",
@@ -20,7 +23,10 @@ const modalities = [
       "A 'Arte das Oito Armas'. Aprenda a usar cotovelos, joelhos e canelas com eficiência máxima em um treino de alta intensidade.",
     stat: "08",
     statLabel: "pontos de impacto",
-    schedule: ["10:00", "22:00"],
+    schedule: [
+      { label: "Manhã", time: "10:00" },
+      { label: "Noite", time: "19:00" },
+    ],
   },
   {
     code: "03",
@@ -30,7 +36,11 @@ const modalities = [
       "A fusão perfeita entre a agilidade do boxe e o impacto dos chutes. Ideal para quem quer explosão muscular e definição rápida.",
     stat: "100%",
     statLabel: "alta intensidade",
-    schedule: ["09:00", "21:00"],
+    schedule: [
+      { label: "Manhã", time: "09:00" },
+      { label: "Tarde", time: "18:00" },
+      { label: "Noite", time: "21:00" },
+    ],
   },
 ];
 
@@ -130,17 +140,17 @@ const ModalityCard = ({ modality, index, parentVisible }) => {
             Horários
           </span>
         </div>
-        <div className="grid grid-cols-2 gap-2">
-          {modality.schedule.map((time, i) => (
+        <div className={`grid gap-2 ${modality.schedule.length === 3 ? "grid-cols-3" : "grid-cols-2"}`}>
+          {modality.schedule.map((slot) => (
             <div
-              key={time}
-              className="bg-black/40 border border-white/10 px-3 py-2.5 flex items-center justify-between group-hover:border-[var(--brand-accent)]/30 transition-colors"
+              key={slot.label}
+              className="bg-black/40 border border-white/10 px-2.5 py-2.5 flex flex-col items-start group-hover:border-[var(--brand-accent)]/30 transition-colors"
             >
-              <span className="text-[10px] uppercase tracking-[0.2em] text-white/40">
-                {i === 0 ? "Manhã" : "Noite"}
+              <span className="text-[9px] uppercase tracking-[0.2em] text-white/40">
+                {slot.label}
               </span>
-              <span className="font-display text-base text-white tabular-nums">
-                {time}
+              <span className="font-display text-base text-white tabular-nums mt-1">
+                {slot.time}
               </span>
             </div>
           ))}
