@@ -65,7 +65,7 @@ export const Authority = () => {
             <h2 className="font-display uppercase text-4xl md:text-5xl lg:text-6xl text-white leading-[0.95] tracking-tight">
               Por que treinar
               <br />
-              <span className="text-white/40">no CT Pedro Albuquerque?.</span>
+              <span className="text-white/40">no CT Pedro Albuquerque?</span>
             </h2>
           </div>
           <div className="lg:col-span-6 lg:col-start-7 flex items-end">
@@ -103,7 +103,7 @@ export const Authority = () => {
                 Oferta limitada
               </div>
               <h3 className="font-display uppercase text-3xl md:text-4xl text-white leading-tight tracking-tight">
-                7 dias. Sem custo.
+                Sem custo.
                 <br />
                 <span className="text-white/50">Sem desculpa.</span>
               </h3>
@@ -118,7 +118,7 @@ export const Authority = () => {
                   "_blank"
                 )
               }
-              className="bg-[var(--brand-accent)] hover:bg-[var(--brand-accent-hover)] text-black font-bold uppercase tracking-[0.15em] text-sm md:text-base rounded-none h-14 px-8 border-0 transition-all hover:shadow-[0_0_30px_-5px_rgba(255,23,68,0.6)]"
+              className="bg-[var(--brand-accent)] hover:bg-[var(--brand-accent-hover)] text-black font-bold uppercase tracking-[0.15em] text-sm md:text-base rounded-none h-14 px-8 border-0 transi[...]"
             >
               Ganhar 1 aula Grátis
             </Button>
