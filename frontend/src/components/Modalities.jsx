@@ -1,4 +1,5 @@
 import useReveal from "../hooks/useReveal";
+import { Clock } from "lucide-react";
 
 const modalities = [
   {
@@ -9,6 +10,7 @@ const modalities = [
       "A 'Nobre Arte' não é sobre bater, é sobre precisão. Queime até 800 calorias enquanto domina a técnica dos grandes campeões.",
     stat: "800",
     statLabel: "kcal / sessão",
+    schedule: ["08:00", "20:00"],
   },
   {
     code: "02",
@@ -18,6 +20,7 @@ const modalities = [
       "A 'Arte das Oito Armas'. Aprenda a usar cotovelos, joelhos e canelas com eficiência máxima em um treino de alta intensidade.",
     stat: "08",
     statLabel: "pontos de impacto",
+    schedule: ["10:00", "22:00"],
   },
   {
     code: "03",
@@ -27,6 +30,7 @@ const modalities = [
       "A fusão perfeita entre a agilidade do boxe e o impacto dos chutes. Ideal para quem quer explosão muscular e definição rápida.",
     stat: "100%",
     statLabel: "alta intensidade",
+    schedule: ["09:00", "21:00"],
   },
 ];
 
@@ -40,7 +44,6 @@ export const Modalities = () => {
       ref={ref}
       className="relative bg-[#0a0a0b] py-24 md:py-36 overflow-hidden"
     >
-      {/* faint side label */}
       <div className="absolute top-24 right-0 hidden lg:block pointer-events-none">
         <span className="font-display text-[10rem] text-white/[0.025] leading-none tracking-tighter select-none">
           ARSENAL
@@ -48,7 +51,6 @@ export const Modalities = () => {
       </div>
 
       <div className="relative max-w-7xl mx-auto px-5 md:px-10">
-        {/* Section header */}
         <div
           className={`max-w-3xl mb-16 md:mb-24 transition-all duration-1000 ${
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
@@ -67,10 +69,14 @@ export const Modalities = () => {
           </h2>
         </div>
 
-        {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/5">
           {modalities.map((m, i) => (
-            <ModalityCard key={m.code} modality={m} index={i} parentVisible={visible} />
+            <ModalityCard
+              key={m.code}
+              modality={m}
+              index={i}
+              parentVisible={visible}
+            />
           ))}
         </div>
       </div>
@@ -79,18 +85,17 @@ export const Modalities = () => {
 };
 
 const ModalityCard = ({ modality, index, parentVisible }) => {
+  const slug = modality.name.toLowerCase().replace(" ", "-");
   return (
     <article
-      data-testid={`modality-card-${modality.name.toLowerCase().replace(" ", "-")}`}
+      data-testid={`modality-card-${slug}`}
       className={`group relative bg-[#0a0a0b] p-8 md:p-10 transition-all duration-700 hover:bg-[#111113] cursor-default
         ${parentVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}
       `}
       style={{ transitionDelay: parentVisible ? `${index * 120}ms` : "0ms" }}
     >
-      {/* top accent line (animates on hover) */}
       <div className="absolute top-0 left-0 h-[2px] w-0 bg-[var(--brand-accent)] group-hover:w-full transition-all duration-500" />
 
-      {/* code */}
       <div className="flex items-start justify-between mb-10">
         <span className="font-display text-sm tracking-[0.25em] text-white/30">
           /{modality.code}
@@ -117,8 +122,33 @@ const ModalityCard = ({ modality, index, parentVisible }) => {
         {modality.description}
       </p>
 
+      {/* Schedule */}
+      <div className="mt-8" data-testid={`modality-schedule-${slug}`}>
+        <div className="flex items-center gap-2 mb-3">
+          <Clock className="w-3.5 h-3.5 text-[var(--brand-accent)]" />
+          <span className="text-[10px] uppercase tracking-[0.25em] text-white/40 font-semibold">
+            Horários
+          </span>
+        </div>
+        <div className="grid grid-cols-2 gap-2">
+          {modality.schedule.map((time, i) => (
+            <div
+              key={time}
+              className="bg-black/40 border border-white/10 px-3 py-2.5 flex items-center justify-between group-hover:border-[var(--brand-accent)]/30 transition-colors"
+            >
+              <span className="text-[10px] uppercase tracking-[0.2em] text-white/40">
+                {i === 0 ? "Manhã" : "Noite"}
+              </span>
+              <span className="font-display text-base text-white tabular-nums">
+                {time}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* footer */}
-      <div className="mt-10 pt-6 border-t border-white/5 flex items-center justify-between">
+      <div className="mt-8 pt-6 border-t border-white/5 flex items-center justify-between">
         <span className="text-[11px] uppercase tracking-[0.25em] text-white/40">
           Todos os níveis
         </span>
