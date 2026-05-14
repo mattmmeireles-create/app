@@ -24,7 +24,7 @@ const pillars = [
     title: "Infraestrutura de Elite",
     subtitle: "Equipamento Profissional",
     description:
-      "Ring oficial, sacos pesados, jaulas, sala de força e vestiários premium. O ambiente que separa o casual do sério.",
+      "Equipamentos efetivos e qualificados para o seu treino render o máximo.",
     tag: "Estrutura",
   },
 ];
@@ -65,7 +65,7 @@ export const Authority = () => {
             <h2 className="font-display uppercase text-4xl md:text-5xl lg:text-6xl text-white leading-[0.95] tracking-tight">
               Por que treinar
               <br />
-              <span className="text-white/40">na Vanguarda.</span>
+              <span className="text-white/40">no CT Pedro Albuquerque.</span>
             </h2>
           </div>
           <div className="lg:col-span-6 lg:col-start-7 flex items-end">
@@ -112,7 +112,7 @@ export const Authority = () => {
               data-testid="authority-cta-button"
               onClick={() =>
                 window.open(
-                  `https://wa.me/5511999999999?text=${encodeURIComponent(
+                  `https://wa.me/5521982478764?text=${encodeURIComponent(
                     "Olá! Vi o site e quero agendar minha aula experimental gratuita."
                   )}`,
                   "_blank"

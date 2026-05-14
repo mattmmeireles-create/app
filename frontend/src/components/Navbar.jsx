@@ -30,8 +30,8 @@ export const Navbar = () => {
           className="flex items-center gap-2 group"
         >
           <span className="h-7 w-1.5 bg-[var(--brand-accent)] block group-hover:h-8 transition-all" />
-          <span className="font-display text-lg md:text-xl tracking-tight text-white">
-            VANGUARDA<span className="text-[var(--brand-accent)]">.CT</span>
+          <span className="font-display text-lg md:text-xl tracking-tight text-white whitespace-nowrap">
+            <span className="text-[var(--brand-accent)]">CT</span> PEDRO ALBUQUERQUE
           </span>
         </a>
 

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { MessageCircle, X } from "lucide-react";
 
-const PHONE = "5511999999999"; // placeholder
+const PHONE = "5521982478764";
 const MESSAGE =
   "Olá! Vi o site e quero agendar minha aula experimental gratuita.";
 
