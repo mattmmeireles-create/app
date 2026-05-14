@@ -72,14 +72,14 @@ export const Navbar = () => {
             rel="noopener noreferrer"
             data-testid="nav-instagram"
             aria-label="Instagram"
-            className="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center border border-white/15 text-white hover:bg-gradient-to-tr hover:from-[#F77737] hover:via-[#E1306C] hover:to-[#833AB4] hover:border-transparent transition-all"
+            className="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center border border-white/15 text-white hover:bg-gradient-to-tr hover:from-[#F77737] hover:via-[#E1306C] hover:to-[#833AB4] transition-all rounded-none"
           >
             <InstagramIcon className="w-4 h-4 sm:w-[18px] sm:h-[18px]" strokeWidth={2.2} />
           </a>
           <Button
             onClick={() => scrollToId("cta")}
             data-testid="nav-cta-button"
-            className="bg-[var(--brand-accent)] hover:bg-[var(--brand-accent-hover)] text-black font-semibold rounded-none px-3 sm:px-4 md:px-6 h-9 sm:h-10 md:h-11 tracking-wide uppercase text-[11px] sm:text-xs md:text-sm border-0"
+            className="bg-[var(--brand-accent)] hover:bg-[var(--brand-accent-hover)] text-black font-semibold rounded-none px-3 sm:px-4 md:px-6 h-9 sm:h-10 md:h-11 tracking-wide uppercase text-[11px] sm:text-xs border-0 transition-colors"
           >
             <span className="hidden sm:inline">Aula Grátis</span>
             <span className="sm:hidden">Grátis</span>
