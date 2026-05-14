@@ -118,7 +118,14 @@ export const Authority = () => {
                   "_blank"
                 )
               }
-              className="bg-[var(--brand-accent)] hover:bg-[var(--brand-accent-hover)] text-black font-bold uppercase tracking-[0.15em] text-sm md:text-base rounded-none h-14 px-8 border-0 transition-all hover:shadow-[0_0_40px_-5px_rgba(255,23,68,0.6)]"
+              onClick={() =>
+                window.open(
+                  `https://wa.me/5521982478764?text=${encodeURIComponent(
+              "Ganhar 1 aula Grátis"
+                  )}`,
+                  "_blank"
+                )
+              }
             >
               Ganhar 1 aula Grátis
             </Button>
