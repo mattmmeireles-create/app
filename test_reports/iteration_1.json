@@ -1,0 +1,29 @@
+{
+  "summary": "Frontend-only test of VANGUARDA.CT landing page. All 7 requested features verified passing: hero headline + CTA, 3 modality cards, 3 authority pillars, sticky WhatsApp float, navbar scroll behaviour, scroll-triggered fade-in animations (useReveal hook on each section), and mobile 390x844 responsiveness.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": [
+      {"screen": "Mobile 390x844", "issues": ["'Made with Emergent' platform badge overlaps WhatsApp float button at bottom-right. This is a preview-env overlay (not in app code) but worth noting — in production the WA button is fully visible."]}
+    ]
+  },
+  "test_report_links": [],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "WhatsApp URL is constructed correctly via wa.me/5511999999999?text=<encodeURIComponent>. WhatsApp's server then redirects to api.whatsapp.com with '+' encoding (verified: phone=5511999999999, text contains 'aula+experimental+gratuita'). Functionally correct.",
+    "All required data-testid attributes are present: site-navbar, nav-modalities, nav-authority, nav-cta-button, hero-headline, hero-subheadline, hero-cta-button, modality-card-boxe/muay-thai/kickboxing, pillar-card-0/1/2, authority-cta-button, whatsapp-float-button.",
+    "Navbar correctly transitions from bg-transparent at top to bg-black/80 + backdrop-blur-md on scroll.",
+    "Smooth scroll verified: nav-modalities -> scrollY=1080, nav-authority -> scrollY=2091.",
+    "Fade-in animations implemented via custom useReveal hook (IntersectionObserver) on Hero, Modalities, Authority sections with staggered transitionDelay on cards.",
+    "Hero headline matches spec: 'Vença seu maior adversário todos os dias: você mesmo.' (with 'você mesmo.' styled as accent italic).",
+    "All three modality descriptions match spec verbatim (Boxe/Muay Thai/Kickboxing).",
+    "All three authority pillars present with subtitles: Ambiente Blindado / Sem Ego, Metodologia Própria / Sistema VNG, Infraestrutura de Elite / Equipamento Profissional."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (skipped)", "frontend": "100%"},
+  "seed_data_creation": "None",
+  "retest_needed": false,
+  "should_main_agent_self_test": false,
+  "context_for_next_testing_agent": "Landing page is fully functional. WhatsApp popup URL appears as api.whatsapp.com (auto-redirect from wa.me) — this is expected WhatsApp behaviour, not a bug. Original window.open call uses wa.me with encoded message as required by spec."
+}

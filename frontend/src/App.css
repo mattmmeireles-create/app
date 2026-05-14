@@ -1,0 +1,61 @@
+/* Brand tokens */
+:root {
+  --brand-accent: #ff1744;        /* Electric Crimson */
+  --brand-accent-hover: #ff3d62;
+  --brand-bg: #000000;
+  --brand-bg-elev: #0a0a0b;
+}
+
+html,
+body,
+#root {
+  background: #000000;
+}
+
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-display {
+  font-family: "Archivo Black", "Inter", sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar — discreet & on-brand */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #000;
+}
+::-webkit-scrollbar-thumb {
+  background: #1c1c1f;
+  border: 2px solid #000;
+  border-radius: 0;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand-accent);
+}
+
+/* Selection highlight handled inline via tailwind selection: classes */
+
+/* Light reveal helper class fallback (if needed elsewhere) */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
