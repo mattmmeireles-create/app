@@ -118,7 +118,7 @@ export const Authority = () => {
                   "_blank"
                 )
               }
-              className="bg-[var(--brand-accent)] hover:bg-[var(--brand-accent-hover)] text-black font-bold uppercase tracking-[0.15em] text-sm md:text-base rounded-none h-14 px-8 border-0 transi[...]"
+              className="bg-[var(--brand-accent)] hover:bg-[var(--brand-accent-hover)] text-black font-bold uppercase tracking-[0.15em] text-sm md:text-base rounded-none h-14 px-8 border-0 transition-colors"
             >
               Ganhar 1 aula Grátis
             </Button>
